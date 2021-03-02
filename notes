@@ -1,0 +1,50 @@
+//account
+
+class Account {
+    constructor(name, balance, creditLimit) {
+        this.name = name;
+        this.balance = balance;
+        this.creditLimit = creditLimit;
+
+    }
+    makeDeposit(amount) {
+        if (amount > 0) {
+            this.balance = this.balance + amount;
+            console.log("balance", this.balance);
+        }
+    }
+    makeWithdrawal(amount) {
+        if (amount < this.balance + this.creditlimit && amount < 5000) {
+            this.balance - amount;
+        }
+    }
+}
+const accountInstance = new Account( "Rein",  1000, 500);
+
+console.log("hi new account", accountInstance, Account);
+
+
+//busaccount
+lass BusinessAccount {
+    constructor(name, balance, creditLimit, sepaPermission) {
+        this.name = name;
+        this.balance = balance;
+        this.creditLimit = creditLimit;
+        this.sepaPermission = sepaPermission;
+    }
+
+    makeDeposit(amount) {
+        if (amount > 0) {
+            this.balance = this.balance + amount;
+            console.log("balance", this.balance);
+        }
+    }
+    makeWithdrawal(amount) {
+        if (amount < this.balance + this.creditlimit && amount < 5000) {
+            this.balance - amount;
+        }
+
+    }
+}
+const businessAccountInstance = new BusinessAccount("ACME.CO", 1000,5000, true);
+console.log("hi newbusaccount", businessAccountInstance);
